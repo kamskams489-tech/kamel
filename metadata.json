@@ -1,0 +1,6 @@
+{
+  "name": "تسبيح",
+  "description": "تطبيق تسبيح وذكر يومي صدقة جارية مع إحصائيات ومنافسة يومية وبطاقات ذكر بالذكاء الاصطناعي",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

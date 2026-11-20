@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">تسبيح</string>
+    <string name="dedication_banner_text">صدقة جارية لوجه الله • إعداد: كمال مزعاد — هدية إلى زوجتي مريم ❤️</string>
+    <string name="subtitle_free_forever">مجاني مدى الحياة</string>
+
+    <!-- Navigation Tabs -->
+    <string name="tab_tasbih">التسبيح</string>
+    <string name="tab_stats">الإحصائيات</string>
+    <string name="tab_competition">المنافسة</string>
+    <string name="tab_cards">بطاقات الذكر</string>
+
+    <!-- Top Bar & Status -->
+    <string name="status_cloud_connected">متصل بالسحابة 🟢</string>
+    <string name="status_cloud_syncing">جارٍ المزامنة 🟡</string>
+    <string name="cd_about_dedication">عن التطبيق والإهداء</string>
+    <string name="cd_user_profile">حسابي</string>
+    <string name="cd_app_emblem">شعار تطبيق تسبيح</string>
+
+    <!-- Auth Screen -->
+    <string name="auth_title">تَسْبِيح</string>
+    <string name="auth_subtitle">صدقة جارية لوجه الله — مجاني مدى الحياة</string>
+    <string name="auth_description">سجّل دخولك بحساب Google لحفظ تسبيحاتك سحابياً، والمشاركة في المنافسة اليومية المباشرة، وتصميم بطاقات الذكر بالذكاء الاصطناعي.</string>
+    <string name="auth_sign_in_google">تسجيل الدخول بحساب Google</string>
+    <string name="auth_signing_in">جارٍ تسجيل الدخول…</string>
+    <string name="auth_privacy_note">يظهر اسمك المختار فقط في لوحة المنافسة ولا نشارك بريدك الإلكتروني أبداً.</string>
+
+    <!-- Tasbih Home -->
+    <string name="tap_to_tasbih">اضغط داخل الدائرة للتسبيح</string>
+    <string name="target_prefix">الهدف:</string>
+    <string name="target_open">مفتوح</string>
+    <string name="today_for_dhikr">اليوم لهذا الذكر:</string>
+    <string name="metric_today_tasbih">تسبيح اليوم</string>
+    <string name="metric_today_istighfar">استغفار اليوم</string>
+    <string name="metric_all_time">الإجمالي العام</string>
+    <string name="action_reset">تصفير</string>
+    <string name="action_add_dhikr">إضافة ذكر</string>
+    <string name="cd_cycle_target">تغيير الهدف</string>
+    <string name="cd_toggle_sound">تبديل صوت السبحة</string>
+    <string name="cd_toggle_vibration">تبديل الاهتزاز</string>
+    <string name="cd_reset_session">تصفير عداد الجلسة</string>
+    <string name="target_completed_toast">تقبّل الله طاعتك! أتممت الهدف</string>
+
+    <!-- Custom Dhikr Dialog -->
+    <string name="dialog_add_dhikr_title">إضافة ذكر جديد</string>
+    <string name="dialog_dhikr_text_label">نص الذكر</string>
+    <string name="dialog_dhikr_text_hint">مثال: سبحان الله العظيم وبحمده</string>
+    <string name="dialog_dhikr_target_label">الهدف الافتراضي</string>
+    <string name="dialog_dhikr_istighfar_toggle">يُحتسب ضمن عداد الاستغفار</string>
+    <string name="action_save">حفظ</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_close">إغلاق</string>
+
+    <!-- Statistics -->
+    <string name="stats_scope_mine">إحصائياتي</string>
+    <string name="stats_scope_all">إحصائيات الجميع</string>
+    <string name="stats_period_total">الإجمالي الكلي</string>
+    <string name="stats_period_today">اليوم فقط</string>
+    <string name="stats_empty_hint">ابدأ التسبيح لتظهر إحصائياتك التفصيلية هنا.</string>
+
+    <!-- Competition -->
+    <string name="comp_quran_verse">﴿ وَفِي ذَٰلِكَ فَلْيَتَنَافَسِ الْمُتَنَافِسُونَ ﴾</string>
+    <string name="comp_subtitle">منافسة يومية حقيقية ومباشرة في ذكر الله</string>
+    <string name="comp_crown_istighfar">بطل الاستغفار اليوم</string>
+    <string name="comp_crown_tasbih">بطل التسبيح اليوم</string>
+    <string name="comp_filter_today">منافسة اليوم</string>
+    <string name="comp_filter_istighfar">أبطال الاستغفار</string>
+    <string name="comp_filter_alltime">الترتيب العام</string>
+    <string name="comp_no_competitors">كن أول المتنافسين اليوم في ذكر الله!</string>
+    <string name="comp_you_badge">أنت</string>
+    <string name="comp_waiting_leader">بانتظار البطل</string>
+
+    <!-- Dhikr Cards Studio (Gemini Image Generation) -->
+    <string name="studio_title">استوديو بطاقات الذكر</string>
+    <string name="studio_subtitle">صمّم بطاقات ذكر وخلفيات إسلامية بدقة عالية</string>
+    <string name="studio_prompt_label">وصف البطاقة الإسلامية</string>
+    <string name="studio_prompt_hint">صف التصميم والخط والزخارف المطلوبة…</string>
+    <string name="studio_quality_label">جودة النموذج</string>
+    <string name="studio_quality_pro">استوديو Pro</string>
+    <string name="studio_quality_fast">سريع</string>
+    <string name="studio_size_label">دقة الصورة</string>
+    <string name="studio_aspect_label">نسبة الأبعاد</string>
+    <string name="studio_generate_btn">توليد البطاقة</string>
+    <string name="studio_generating_msg">جارٍ تصميم البطاقة بالذكاء الاصطناعي (قد يستغرق ٣٠–٦٠ ثانية)…</string>
+    <string name="studio_idle_hint">اختر قالباً جاهزاً أو اكتب وصفاً، ثم حدد الدقة والأبعاد لتوليد بطاقة ذكر فاخرة.</string>
+    <string name="studio_share_btn">مشاركة البطاقة</string>
+    <string name="studio_save_btn">حفظ في المعرض</string>
+    <string name="studio_saved_success">تم حفظ البطاقة في معرض الصور بنجاح</string>
+    <string name="studio_retry_btn">إعادة المحاولة</string>
+    <string name="cd_generated_card">بطاقة الذكر المُولّدة</string>
+    <string name="cd_studio_banner">خلفية استوديو بطاقات الذكر</string>
+
+    <!-- About & Profile Dialogs -->
+    <string name="about_title">صدقة جارية لوجه الله</string>
+    <string name="about_body">هذا التطبيق صدقة جارية لوجه الله تعالى، مجاني بالكامل مدى الحياة وبلا أي إعلانات.\n\nإعداد وتطوير: كمال مزعاد\nهدية محبة وتقدير إلى زوجتي مريم ❤️\n\nنسأل الله أن يتقبله خالصاً لوجهه الكريم وأن يكتب الأجر لكل من سبّح وذكر الله به.</string>
+    <string name="about_dua">اللهم تقبّل منا إنك أنت السميع العليم</string>
+    <string name="profile_title">ملفي الشخصي</string>
+    <string name="profile_display_name_label">الاسم الظاهر في المنافسة</string>
+    <string name="profile_sign_out">تسجيل الخروج</string>
+</resources>

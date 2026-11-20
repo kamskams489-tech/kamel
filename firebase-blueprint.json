@@ -1,0 +1,187 @@
+{
+  "entities": {
+    "UserSettings": {
+      "title": "UserSettings",
+      "description": "Private preferences and active tasbih configuration for an authenticated user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID matching the document ID."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name shown in the profile pill and synced to leaderboard."
+        },
+        "soundEnabled": {
+          "type": "boolean",
+          "description": "Whether subtle tactile bead click sound is enabled."
+        },
+        "vibrateEnabled": {
+          "type": "boolean",
+          "description": "Whether haptic vibration on each tasbih tap is enabled."
+        },
+        "activeDhikrId": {
+          "type": "string",
+          "description": "Identifier of the currently selected dhikr."
+        },
+        "targetCount": {
+          "type": "integer",
+          "description": "Current session target count (0 means unlimited/open)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation server timestamp (written via FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update server timestamp (written via FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "soundEnabled",
+        "vibrateEnabled",
+        "activeDhikrId",
+        "targetCount",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "CustomDhikr": {
+      "title": "CustomDhikr",
+      "description": "A user-authored custom dhikr entry stored under the owner's private subcollection.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated owner UID."
+        },
+        "title": {
+          "type": "string",
+          "description": "Arabic or custom dhikr phrase text."
+        },
+        "target": {
+          "type": "integer",
+          "description": "Preferred default target count for this dhikr (0 means open)."
+        },
+        "colorHex": {
+          "type": "string",
+          "description": "Accent hex color string (e.g. #D4AF37)."
+        },
+        "countsAsIstighfar": {
+          "type": "boolean",
+          "description": "Whether taps on this dhikr also contribute to daily/all-time Istighfar metrics."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation server timestamp (written via FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update server timestamp (written via FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "title",
+        "target",
+        "colorHex",
+        "countsAsIstighfar",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "LeaderboardEntry": {
+      "title": "LeaderboardEntry",
+      "description": "Non-PII public tasbih stats and live competition scoreboard record for an authenticated user.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Authenticated user UID matching the document ID."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Public nickname displayed on the leaderboard (no email or PII)."
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["public"],
+          "description": "Explicit public visibility flag checked by allow list rules and client queries."
+        },
+        "todayDate": {
+          "type": "string",
+          "description": "UTC/local calendar date key (YYYY-MM-DD) for daily counter reset."
+        },
+        "todayTotal": {
+          "type": "integer",
+          "description": "Total tasbih count accumulated on todayDate."
+        },
+        "todayIstighfar": {
+          "type": "integer",
+          "description": "Total istighfar count accumulated on todayDate."
+        },
+        "allTimeTotal": {
+          "type": "integer",
+          "description": "Cumulative all-time tasbih count."
+        },
+        "allTimeIstighfar": {
+          "type": "integer",
+          "description": "Cumulative all-time istighfar count."
+        },
+        "dhikrTotals": {
+          "type": "object",
+          "description": "Map of dhikrId to cumulative all-time count (max 40 entries)."
+        },
+        "dhikrToday": {
+          "type": "object",
+          "description": "Map of dhikrId to today's count (max 40 entries)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation server timestamp (written via FieldValue.serverTimestamp())."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update server timestamp (written via FieldValue.serverTimestamp())."
+        }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "visibility",
+        "todayDate",
+        "todayTotal",
+        "todayIstighfar",
+        "allTimeTotal",
+        "allTimeIstighfar",
+        "dhikrTotals",
+        "dhikrToday",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserSettings" },
+      "description": "Owner-only user settings and active tasbih configuration."
+    },
+    "/users/{userId}/custom_adhkar/{dhikrId}": {
+      "schema": { "$ref": "#/entities/CustomDhikr" },
+      "description": "Owner-only custom adhkar created by the user."
+    },
+    "/leaderboard/{userId}": {
+      "schema": { "$ref": "#/entities/LeaderboardEntry" },
+      "description": "Public competition and global community statistics records (zero PII, owner-write, authenticated-read with visibility == 'public')."
+    }
+  }
+}
